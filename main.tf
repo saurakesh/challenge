@@ -107,8 +107,8 @@ module "secondary-database" {
   secondarypassword = module.keyvault.userpwd
   primarysqldbid = module.primary-database.sqlserverdbid
   primarysqlserverid = module.primary-database.sqlserverid
-  rgname = module.primary-resourcegroup.rgnameout
-  location = "South India"
+  rgname = module.secondary-resourcegroup.rgnameout
+  location = module.secondary-resourcegroup.rglocationout
 }
 module "frontdoor" {
   source = "./frontdoor"
